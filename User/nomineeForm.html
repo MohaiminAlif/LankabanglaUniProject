@@ -28,33 +28,9 @@
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="../dist/css/style.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      $("#hide").click(function() {
-        $("#jointAccount").hide();
-      });
-      $("#show").click(function() {
-        $("#jointAccount").show();
-      });
-    });
-    $(document).ready(function() {
-      $('').click(function() {
-        $("html, body").animate({
-          scrollTop: 0
-        }, 1000);
-        return false;
-      });
-    });
-    $(document).ready(function() {
-      // Target the button element using its ID and add a click event handler
-      $("#showFormButton").click(function() {
-        // Toggle the form's visibility using jQuery's slideToggle() method
-        $("#myForm").slideToggle();
-      });
-    });
-  </script>
 
   <style>
     #jointAccount {
@@ -81,14 +57,13 @@
 </head>
 
 <body class="hold-transition">
-<div class="row mt-2">
+  <div class="row mt-2">
 
     <!-- Main Sidebar Container -->
-    <aside class="col-2" align="center">
+    <aside class="sidenav mt-5" align="center">
       <!-- Brand Logo -->
-      <a href="index.html" class="brand-link" style="color: black;">
-        <img src="../../dist/img/logo4.png" alt="AdminLTE Logo"
-          style="opacity:1; height:5em">
+      <a href="https://lankabd.com/" class="brand-link">
+        <img src="../../dist/img/logo4.png" alt="AdminLTE Logo" style="opacity:1; height:5em">
       </a>
 
       <!-- Sidebar -->
@@ -96,9 +71,8 @@
 
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-            <li class="nav-item">
+
+            <li class="nav-item mt-4">
               <a href="regForm.html" class="nav-link">
 
                 <p>
@@ -107,8 +81,8 @@
               </a>
             </li>
 
-            <li class="nav-item">
-              <a href="regForm.html" class="nav-link active">
+            <li class="nav-item mt-4">
+              <a href="#" class="nav-link card">
 
                 <p>
                   Nominee
@@ -122,6 +96,8 @@
       <!-- /.sidebar -->
     </aside>
 
+    <div class="col-2"></div>
+
     <!-- Content Wrapper. Contains page content -->
     <div class="col-9">
       <!-- Content Header (Page header) -->
@@ -129,7 +105,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-12">
-              <h1 class="m-0" align="center">Nominee Form</h1>
+              <h1 class="mt-5" align="center">BO Account Nominee Form</h1>
             </div><!-- /.col -->
 
           </div><!-- /.row -->
@@ -139,76 +115,47 @@
 
       <!-- Main content -->
 
-      <section class=" sectionForm container shadow py-3 p-3 mt-5">
+      <section class=" sectionForm container card shadow py-5 px-5 mt-5">
 
-        <!-- Bank Details -->
-        <div class="px-3">
-          <h3 class="row">Bank Details</h3>
-
-          <form class="row g-3" action="#">
-
-            <div class="col-md-6 mt-3">
-              <label for="customerName" class="form-label">Bank Name</label>
-              <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
-            </div>
-
-            <div class="col-md-6 mt-3">
-              <label for="formFile" class="form-label">Branch Name</label>
-              <input class="form-control" type="text" id="formFile" required>
-            </div>
-
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Acc No.
-              </label>
-              <input type="text" class="form-control" id="inputPassword4" required>
-            </div>
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Routing No.</label>
-              <input type="password" class="form-control" id="inputPassword4" required>
-            </div>
-
-            <div class="col-10 mt-3"></div>
-            <div class="col-2 mt-3" align="right">
-
-              <button id="hide" class="btn btn-primary">Next</button>
-            </div>
-
-          </form>
+        <div class="container mt-5 mb-5">
+          <h5>I/We nominate the following person(s) who is/are entitled to receive securities outstanding in my/our
+            account in the event of the death of the sole holder/all the joint holders/training</h5>
         </div>
-
-      </section>
-
-      <div class="container mt-5 mb-5">
-        <h5>I/We nominate the following per son (S) who is/are entitled to receive securities outstanding in my/our
-          account in the event of the
-          death of the sole holder/all the joint holders training</h5>
-      </div>
-
-      <section class=" sectionForm container card shadow py-3 px-5">
 
         <div class="row ">
-          <h3>Nominee Heirs Details</h3>
+          <h3>Nominee/Heirs Details</h3>
 
         </div>
 
-        <div class="row mt-2">
+        <div class="row mt-3">
           <h5>Nominee 1</h5>
         </div>
         <div>
           <form class="row g-3" action="#">
 
-            <div class="col-md-2">
+            <div class="col-md-1 mt-1">
               <label for="formFile" class="form-label">Title</label>
-              <input class="form-control" type="text" id="formFile" required>
+              <select name="cars" id="cars">
+                <option value="volvo">Mr.</option>
+                <option value="saab">Mrs.</option>
+                <option value="opel">Ms.</option>
+                <option value="opel">Dr.</option>
+
+              </select>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-5">
               <label for="customerName" class="form-label">Full Name</label>
               <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <label for="formFile" class="form-label">Upload a Photo</label>
+              <input class="form-control" type="file" id="formFile" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="formFile" class="form-label">Upload a photo of Signature</label>
               <input class="form-control" type="file" id="formFile" required>
             </div>
 
@@ -222,7 +169,7 @@
             </div>
             <div class="col-md-4 mt-3">
               <label for="formFile" class="form-label">Date Of Birth</label>
-              <input class="form-control" type="text" id="formFile" required>
+              <input class="form-control" type="date" id="formFile" required>
             </div>
 
             <div class="col-md-4 mt-3">
@@ -306,145 +253,170 @@
               <input type="text" class="form-control" id="inputAddress2">
             </div>
 
-            <div class="row mt-2">
-              <h5>Nominee 5</h5>
+            <div class="col-md-12 mt-5 mb-3">
+              <h5>Guardian's Details (If the nominee is a minor)</h5>
             </div>
-            <div>
-              <form class="row g-3" action="#">
 
-                <div class="col-md-2">
-                  <label for="formFile" class="form-label">Title</label>
-                  <input class="form-control" type="text" id="formFile" required>
-                </div>
+            <div class="col-md-1 mt-1">
+              <label for="formFile" class="form-label">Title</label>
+              <select name="cars" id="cars">
+                <option value="volvo">Mr.</option>
+                <option value="saab">Mrs.</option>
+                <option value="opel">Ms.</option>
+                <option value="opel">Dr.</option>
 
-                <div class="col-md-6">
-                  <label for="customerName" class="form-label">Full Name</label>
-                  <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
-                </div>
-
-                <div class="col-md-4">
-                  <label for="formFile" class="form-label">Upload a Photo</label>
-                  <input class="form-control" type="file" id="formFile" required>
-                </div>
-
-                <div class="col-md-4 mt-3">
-                  <label for="formFile" class="form-label">Relationship with nominee</label>
-                  <input class="form-control" type="text" id="formFile" required>
-                </div>
-                <div class="col-md-4 mt-3">
-                  <label for="formFile" class="form-label">Percentage</label>
-                  <input class="form-control" type="text" id="formFile" required>
-                </div>
-                <div class="col-md-4 mt-3">
-                  <label for="formFile" class="form-label">Date Of Birth</label>
-                  <input class="form-control" type="text" id="formFile" required>
-                </div>
-
-                <div class="col-md-4 mt-3">
-                  <label class="form-label">Address</label>
-                  <input type="text" class="form-control" id="inputPassword4" required>
-                </div>
-                <div class="col-md-4 mt-3">
-                  <label class="form-label">City</label>
-                  <input type="text" class="form-control" id="inputPassword4" required>
-                </div>
-                <div class="col-md-4 mt-3">
-                  <label class="form-label">Postal Code</label>
-                  <input type="text" class="form-control" id="inputPassword4" required>
-                </div>
-
-                <div class="col-md-4 mt-3">
-                  <label class="form-label">State</label>
-                  <input type="text" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-md-4 mt-3">
-                  <label for="inputAddress" class="form-label">Country</label>
-                  <input type="text" class="form-control" id="inputAddress">
-                </div>
-                <div class="col-md-4 mt-3">
-                  <label class="form-label">Division</label>
-                  <input type="text" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label class="form-label">Tel Number</label>
-                  <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label for="inputAddress2" class="form-label">Mobile Nuumber</label>
-                  <input type="text" class="form-control" id="inputAddress2">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label for="inputAddress2" class="form-label">FAX</label>
-                  <input type="text" class="form-control" id="inputAddress2">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label for="inputAddress2" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="inputAddress2">
-                </div>
-
-                <div class="col-md-3 mt-3">
-                  <label class="form-label">Passport Number</label>
-                  <input type="password" class="form-control" id="inputPassword4">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label for="inputAddress2" class="form-label">Issue Place</label>
-                  <input type="text" class="form-control" id="inputAddress2">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label for="inputAddress2" class="form-label">Issue Date</label>
-                  <input type="date" class="form-control" id="inputAddress2">
-                </div>
-                <div class="col-md-3 mt-3">
-                  <label for="inputAddress2" class="form-label">Expiry Date</label>
-                  <input type="date" class="form-control" id="inputAddress2">
-                </div>
-                <div class="col-md-6 mt-3">
-                  <label class="form-label">Residency: </label>
-                  <div class="div row">
-                    <div class="form-check col-6">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Reside
-                      </label>
-                    </div>
-                    <div class="form-check col-6">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                      <label class="form-check-label" for="flexRadioDefault2">
-                        Non-Reside
-                      </label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-5 mt-3">
-                  <label for="inputAddress2" class="form-label">Nationality</label>
-                  <input type="text" class="form-control" id="inputAddress2">
-                </div>
-
-              </form>
+              </select>
             </div>
+
+            <div class="col-md-5">
+              <label for="customerName" class="form-label">Full Name</label>
+              <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="formFile" class="form-label">Upload a Photo</label>
+              <input class="form-control" type="file" id="formFile" required>
+            </div>
+
+            <div class="col-md-3">
+              <label for="formFile" class="form-label">Upload a photo of Signature</label>
+              <input class="form-control" type="file" id="formFile" required>
+            </div>
+
+            <div class="col-md-4 mt-3">
+              <label for="formFile" class="form-label">Relationship with nominee</label>
+              <input class="form-control" type="text" id="formFile" required>
+            </div>
+            <div class="col-md-4 mt-3">
+              <label for="formFile" class="form-label">Date of Birth of Minor</label>
+              <input class="form-control" type="date" id="formFile" required>
+            </div>
+            <div class="col-md-4 mt-3">
+              <label for="formFile" class="form-label">Maturity Date of Minor</label>
+              <input class="form-control" type="date" id="formFile" required>
+            </div>
+
+            <div class="col-md-4 mt-3">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputPassword4" required>
+            </div>
+            <div class="col-md-4 mt-3">
+              <label class="form-label">City</label>
+              <input type="text" class="form-control" id="inputPassword4" required>
+            </div>
+            <div class="col-md-4 mt-3">
+              <label class="form-label">Postal Code</label>
+              <input type="text" class="form-control" id="inputPassword4" required>
+            </div>
+
+            <div class="col-md-4 mt-3">
+              <label class="form-label">State</label>
+              <input type="text" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-4 mt-3">
+              <label for="inputAddress" class="form-label">Country</label>
+              <input type="text" class="form-control" id="inputAddress">
+            </div>
+            <div class="col-md-4 mt-3">
+              <label class="form-label">Division</label>
+              <input type="text" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label class="form-label">Tel Number</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Mobile Nuumber</label>
+              <input type="text" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">FAX</label>
+              <input type="text" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Email</label>
+              <input type="text" class="form-control" id="inputAddress2">
+            </div>
+
+            <div class="col-md-3 mt-3">
+              <label class="form-label">Passport Number</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Issue Place</label>
+              <input type="text" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Issue Date</label>
+              <input type="date" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Expiry Date</label>
+              <input type="date" class="form-control" id="inputAddress2">
+            </div>
+            <div class="col-md-6 mt-3">
+              <label class="form-label">Residency: </label>
+              <div class="div row">
+                <div class="form-check col-6">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Reside
+                  </label>
+                </div>
+                <div class="form-check col-6">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Non-Reside
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Nationality</label>
+              <input type="text" class="form-control" id="inputAddress2">
+            </div>
+
+            <div class="col-md-3 mt-3">
+              <label for="inputAddress2" class="form-label">Date of Birth</label>
+              <input type="date" class="form-control" id="inputAddress2">
+            </div>
+
+          </form>
+        </div>
 
       </section>
 
-      <section class="sectionForm container card shadow py-3 px-5 mt-5">
+      <section class="sectionForm container card shadow py-5 px-5 mt-5">
 
         <div class="row mt-2">
           <h5>Nominee 2</h5>
         </div>
         <form class="row g-3" action="#">
 
-          <div class="col-md-2">
+          <div class="col-md-1 mt-1">
             <label for="formFile" class="form-label">Title</label>
-            <input class="form-control" type="text" id="formFile" required>
+            <select name="cars" id="cars">
+              <option value="volvo">Mr.</option>
+              <option value="saab">Mrs.</option>
+              <option value="opel">Ms.</option>
+              <option value="opel">Dr.</option>
+
+            </select>
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-5">
             <label for="customerName" class="form-label">Full Name</label>
             <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <label for="formFile" class="form-label">Upload a Photo</label>
+            <input class="form-control" type="file" id="formFile" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="formFile" class="form-label">Upload a photo of Signature</label>
             <input class="form-control" type="file" id="formFile" required>
           </div>
 
@@ -542,6 +514,135 @@
             <input type="text" class="form-control" id="inputAddress2">
           </div>
 
+          <div class="col-md-12 mt-5 mb-3">
+            <h5>Guardian's Details (If the nominee is a minor)</h5>
+          </div>
+
+          <div class="col-md-1 mt-1">
+            <label for="formFile" class="form-label">Title</label>
+            <select name="cars" id="cars">
+              <option value="volvo">Mr.</option>
+              <option value="saab">Mrs.</option>
+              <option value="opel">Ms.</option>
+              <option value="opel">Dr.</option>
+
+            </select>
+          </div>
+
+          <div class="col-md-5">
+            <label for="customerName" class="form-label">Full Name</label>
+            <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="formFile" class="form-label">Upload a Photo</label>
+            <input class="form-control" type="file" id="formFile" required>
+          </div>
+
+          <div class="col-md-3">
+            <label for="formFile" class="form-label">Upload a photo of Signature</label>
+            <input class="form-control" type="file" id="formFile" required>
+          </div>
+
+          <div class="col-md-4 mt-3">
+            <label for="formFile" class="form-label">Relationship with nominee</label>
+            <input class="form-control" type="text" id="formFile" required>
+          </div>
+          <div class="col-md-4 mt-3">
+            <label for="formFile" class="form-label">Date of Birth of Minor</label>
+            <input class="form-control" type="date" id="formFile" required>
+          </div>
+          <div class="col-md-4 mt-3">
+            <label for="formFile" class="form-label">Maturity Date of Minor</label>
+            <input class="form-control" type="date" id="formFile" required>
+          </div>
+
+          <div class="col-md-4 mt-3">
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" id="inputPassword4" required>
+          </div>
+          <div class="col-md-4 mt-3">
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" id="inputPassword4" required>
+          </div>
+          <div class="col-md-4 mt-3">
+            <label class="form-label">Postal Code</label>
+            <input type="text" class="form-control" id="inputPassword4" required>
+          </div>
+
+          <div class="col-md-4 mt-3">
+            <label class="form-label">State</label>
+            <input type="text" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-4 mt-3">
+            <label for="inputAddress" class="form-label">Country</label>
+            <input type="text" class="form-control" id="inputAddress">
+          </div>
+          <div class="col-md-4 mt-3">
+            <label class="form-label">Division</label>
+            <input type="text" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label class="form-label">Tel Number</label>
+            <input type="password" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Mobile Nuumber</label>
+            <input type="text" class="form-control" id="inputAddress2">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">FAX</label>
+            <input type="text" class="form-control" id="inputAddress2">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Email</label>
+            <input type="text" class="form-control" id="inputAddress2">
+          </div>
+
+          <div class="col-md-3 mt-3">
+            <label class="form-label">Passport Number</label>
+            <input type="password" class="form-control" id="inputPassword4">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Issue Place</label>
+            <input type="text" class="form-control" id="inputAddress2">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Issue Date</label>
+            <input type="date" class="form-control" id="inputAddress2">
+          </div>
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Expiry Date</label>
+            <input type="date" class="form-control" id="inputAddress2">
+          </div>
+          <div class="col-md-6 mt-3">
+            <label class="form-label">Residency: </label>
+            <div class="div row">
+              <div class="form-check col-6">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Reside
+                </label>
+              </div>
+              <div class="form-check col-6">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Non-Reside
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Nationality</label>
+            <input type="text" class="form-control" id="inputAddress2">
+          </div>
+
+          <div class="col-md-3 mt-3">
+            <label for="inputAddress2" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="inputAddress2">
+          </div>
+
         </form>
     </div>
 
@@ -551,12 +652,15 @@
   </div>
   <!-- /.content-wrapper -->
   <div class="row mt-5" style="color: rgb(76, 88, 128);">
-            
-    <strong class="col-lg-3 col-md-12 col-sm-6 " align="center">Developed and Redesigned by IUB DataCoders 2023.</strong>
-    <div class="col-lg-8 "></div>
-    <strong class="col-lg-1 col-md-12 col-sm-2" align="center"><p>Version 1.0</p></strong>
 
-</div>
+    <strong class="col-lg-3 col-md-12 col-sm-6 " align="center">Developed and Redesigned by IUB DataCoders
+      2023.</strong>
+    <div class="col-lg-8 "></div>
+    <strong class="col-lg-1 col-md-12 col-sm-2" align="center">
+      <p>Version 1.0</p>
+    </strong>
+
+  </div>
   <!-- /.control-sidebar -->
   </div>
   <!-- ./wrapper -->
