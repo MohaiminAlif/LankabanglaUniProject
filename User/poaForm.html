@@ -76,7 +76,7 @@
               <a href="regForm.html" class="nav-link card shadow">
 
                 <p>
-                  Account Details
+                  Personal Details
                 </p>
               </a>
             </li>
@@ -87,6 +87,7 @@
                 <p>
                   Brokerage Registration
                 </p>
+
               </a>
             </li>
 
@@ -100,11 +101,11 @@
             </li>
 
             <li class="nav-item mt-4">
-              <a href="poaForm.html" class="nav-link card">
+              <a href="#" class="nav-link card shadow">
 
                 <p>
                   Power of Attorney Details
-                </p> 
+                </p>
               </a>
             </li>
 
@@ -153,14 +154,22 @@
         <div>
           <form class="row g-3" action="#">
 
-            <div class="col-md-1 mt-1">
-              <label for="formFile" class="form-label">Title</label>
-              <select name="cars" id="cars">
-                <option value="volvo">Mr.</option>
-                <option value="saab">Mrs.</option>
-                <option value="opel">Ms.</option>
-                <option value="opel">Dr.</option>
+            <div class="col-md-4 mt-1">
+              <label for="formFile" class="form-label">Brokerage Category</label>
+              <select name="boType" id="boType">  
+                <option value="volvo">Regular</option>
+                <option value="saab">Omnibus</option>
+                <option value="opel">Clearing</option>
+              </select>
+            </div>
 
+
+            <div class="col-md-4 mt-1">
+              <label for="formFile" class="form-label">Brokerage Type</label>
+              <select name="boType" id="boType">     
+                <option value="volvo">Individual</option>
+                <option value="saab">Company</option>
+                <option value="opel">Joint Holder</option>
               </select>
             </div>
 
@@ -719,26 +728,6 @@
   <script src="../dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="../dist/js/pages/dashboard.js"></script>
-
-	
-<!--===============================================================================================-->	
-<script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/bootstrap/js/popper.js"></script>
-	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="../vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-	<script src="../dist/js/main.js"></script>
-
-
 </body>
 
 </html>
