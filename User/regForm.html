@@ -122,7 +122,7 @@
         <!-- First Account Holder -->
         <div class="row ">
           <h3>First Account Holder</h3>
-          <form class="row g-3" action="#">
+          <form class="row g-3" action="jointForm.html" method="">
 
             <div class="col-md-6 mt-3">
               <label for="customerName" class="form-label">Name of the Client</label>
@@ -147,24 +147,16 @@
               <input type="date" class="form-control" name="dob">
             </div>
 
-            <div class="col-md-4 mt-3">
+            <div class="col-md-2 mt-5">
+             
               <label class="form-label">Gender</label>
-              <div class="div row">
-                <div class="form-check col-4 mx-2">
-                  <input class="form-check-input" type="radio" name="male">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Male
-                  </label>
-                </div>
-                <div class="form-check col-6">
-                  <input class="form-check-input" type="radio" name="female">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Female
-                  </label>
-                </div>
-              </div>
+                <select name="gender">
+                  <option value="select">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
             </div>
-            <div class="col-md-4 mt-3">
+            <div class="col-md-6 mt-3">
               <label class="form-label">Nationality</label>
               <input type="text" class="form-control" name="nationality">
             </div>
@@ -277,7 +269,7 @@
             <div class="col-2 mt-3" align="right"> Operation Type:</div>
             <div class="col-1 mt-3" align="right">              
               <select name="operation_type">
-                <option value="client">Select</option>
+                <option value="select">Select</option>
                 <option value="individual">Individual</option>
                 <option value="joint">Joint</option>
                 <option value="corporate">Corporate</option>
