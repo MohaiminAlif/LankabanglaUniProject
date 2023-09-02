@@ -58,11 +58,6 @@
   </script>
 
   <style>
-    #jointAccount {
-
-      display: none;
-    }
-
     .sectionForm {
       background-color: rgba(20, 174, 221, 0.137);
 
@@ -73,15 +68,7 @@
     }
 
 
-    /* Hide the form by default */
-    #myForm {
-      display: none;
-    }
-    a:hover{
-      text-decoration: none;
-      text-decoration-color: black;
-  
-    }
+
   </style>
 
 </head>
@@ -102,41 +89,7 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-            <li class="nav-item mt-4">
-              <a href="regForm.html" class="nav-link card shadow">
 
-                <p>
-                  Account Details
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item mt-4">
-              <a href="boForm.html" class="nav-link card">
-
-                <p>
-                  Brokerage Registration
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item mt-4">
-              <a href="nomineeForm.html" class="nav-link card">
-
-                <p>
-                  Nominee Details
-                </p>
-              </a>
-            </li>
-
-            <li class="nav-item mt-4">
-              <a href="poaForm.html" class="nav-link card">
-
-                <p>
-                  Power of Attorney Details
-                </p>
-              </a>
-            </li>
 
 
 
@@ -156,7 +109,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-12">
-              <h1 class="mt-5" align="center">Customer Registration Form</h1>
+              <h1 class="mt-5" align="center">Client Registration Form</h1>
             </div><!-- /.col -->
 
           </div><!-- /.row -->
@@ -172,38 +125,39 @@
           <form class="row g-3" action="#">
 
             <div class="col-md-6 mt-3">
-              <label for="customerName" class="form-label">Name of the Customer</label>
-              <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
+              <label for="customerName" class="form-label">Name of the Client</label>
+              <input type="text" class="form-control" name="name" >
             </div>
 
             <div class="col-md-6 mt-3">
               <label for="formFile" class="form-label">Upload a Passport Sized Photo</label>
-              <input class="form-control" type="file" id="formFile" required>
+              <input class="form-control" type="file" name="photo">
             </div>
 
             <div class="col-md-6 mt-3">
-              <label class="form-label">Father's/ Husband's Name</label>
-              <input type="password" class="form-control" id="inputPassword4" required>
+              <label class="form-label">Father's Name</label>
+              <input type="text" class="form-control" name="father_name">
             </div>
             <div class="col-md-6 mt-3">
               <label class="form-label">Mother's Name</label>
-              <input type="password" class="form-control" id="inputPassword4" required>
+              <input type="text" class="form-control" name="mother_name">
             </div>
             <div class="col-md-4 mt-3">
               <label class="form-label">Date of Birth</label>
-              <input type="date" class="form-control" id="inputPassword4" required>
+              <input type="date" class="form-control" name="dob">
             </div>
+
             <div class="col-md-4 mt-3">
-              <label class="form-label">SEX</label>
+              <label class="form-label">Gender</label>
               <div class="div row">
                 <div class="form-check col-4 mx-2">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <input class="form-check-input" type="radio" name="male">
                   <label class="form-check-label" for="flexRadioDefault1">
                     Male
                   </label>
                 </div>
                 <div class="form-check col-6">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                  <input class="form-check-input" type="radio" name="female">
                   <label class="form-check-label" for="flexRadioDefault2">
                     Female
                   </label>
@@ -212,232 +166,76 @@
             </div>
             <div class="col-md-4 mt-3">
               <label class="form-label">Nationality</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <input type="text" class="form-control" name="nationality">
             </div>
-            <div class="col-12 mt-3">
-              <label for="inputAddress" class="form-label">Present Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Present Thana</label>
+              <input type="text" class="form-control" name="present_thana">
             </div>
-            <div class="col-md-6 mt-3">
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Present Post</label>
+              <input type="text" class="form-control" name="present_thana">
+            </div>
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Present Division</label>
+              <input type="text" class="form-control" name="present_thana">
+            </div>
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Present Country</label>
+              <input type="text" class="form-control" name="present_thana">
+            </div>
+            <div class="col-md-4 mt-3">
               <label class="form-label">Mobile</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <input type="text" class="form-control" name="mobile">
             </div>
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Tel Number</label>
-              <input type="password" class="form-control" id="inputPassword4">
+            <div class="col-md-4 mt-3">
+              <label class="form-label">Telephone Number</label>
+              <input type="text" class="form-control" name="tel">
             </div>
-            <div class="col-12 mt-3">
-              <label for="inputAddress2" class="form-label">Permanent Address</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <div class="col-md-4 mt-3">
+              <label class="form-label">NID Number</label>
+              <input type="text" class="form-control" name="nid" >
             </div>
-            <div class="col-6 mt-3">
-              <label for="inputAddress2" class="form-label">Tel Number</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Permanent Thana</label>
+              <input type="text" class="form-control" name="permanent_thana">
+            </div>
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Permanent Post</label>
+              <input type="text" class="form-control" name="permanent_post">
+            </div>
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Permanent Division</label>
+              <input type="text" class="form-control" name="permanent_division">
+            </div>
+            <div class="col-3 mt-3">
+              <label for="inputAddress" class="form-label">Permanent Country</label>
+              <input type="text" class="form-control" name="permanent_country">
             </div>
             <div class="col-6 mt-3">
               <label for="inputAddress2" class="form-label">Email</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              <input type="emial" class="form-control" name="email">
             </div>
 
             <div class="col-6 mt-3">
               <label for="inputAddress2" class="form-label">Occupation</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              <input type="text" class="form-control" name="occupation">
             </div>
             <div class="col-6 mt-3">
               <label for="inputAddress2" class="form-label">E-Tin Number</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+              <input type="text" class="form-control" name="tin" >
+            </div>
+            <div class="col-md-6 mt-3">
+              <label for="formFile" class="form-label">Upload a photo of Signature</label>
+              <input class="form-control" type="file" name="signature" >
             </div>
 
-            <div class="col-10 mt-3"></div>
-            <div class="col-2 mt-3" align="right">
-              <a href="#jointAccount"><button id="show" class="btn btn-primary">YES</button></a>
-
-            </div>
-
-            <div class="col-10"></div>
-            <div class="col-2" align="right">
-              <p>Is this a joint account?</p>
-            </div>
-
-          </form>
+    
+     
         </div>
 
       </section>
 
-      <section id="jointAccount" class="sectionForm container card shadow py-3 px-5 mt-5 mb-5e">
-        <!-- Joint Account Holder -->
-        <div class="row ">
-          <h3>Joint Account Holder</h3>
-          <form class="row g-3" action="#">
-
-            <div class="col-md-6 mt-3">
-              <label for="customerName" class="form-label">Name of the Customer</label>
-              <input type="email" class="form-control" id="inputEmail4" name="name of customer">
-            </div>
-
-            <div class="col-md-6 mt-3">
-              <label for="formFile" class="form-label">Upload a Passport Sized Photo</label>
-              <input class="form-control" type="file" id="formFile">
-            </div>
-
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Father's/ Husband's Name</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Mother's Name</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-md-4 mt-3">
-              <label class="form-label">Date of Birth</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-md-4 mt-3">
-              <label class="form-label">SEX</label>
-              <div class="div row">
-                <div class="form-check col-6">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Male
-                  </label>
-                </div>
-                <div class="form-check col-6">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Female
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 mt-3">
-              <label class="form-label">Nationality</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-12 mt-3">
-              <label for="inputAddress" class="form-label">Present Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Mobile</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-md-6 mt-3">
-              <label class="form-label">Tel Number</label>
-              <input type="password" class="form-control" id="inputPassword4">
-            </div>
-            <div class="col-12 mt-3">
-              <label for="inputAddress2" class="form-label">Permanent Address</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-6 mt-3">
-              <label for="inputAddress2" class="form-label">Tel Number</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-6 mt-3">
-              <label for="inputAddress2" class="form-label">Email</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-
-            <div class="col-6 mt-3">
-              <label for="inputAddress2" class="form-label">Occupation</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <div class="col-6 mt-3">
-              <label for="inputAddress2" class="form-label">E-Tin Number</label>
-              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-
-          </form>
-        </div>
-
-        <!-- Authorized Person's Info -->
-        <div class="row mt-5 py-5">
-          <h3 id="">Authorized Person's Information</h3>
-          <div class="row ">
-            <form class="row g-3" action="#">
-
-              <div class="col-md-6 mt-3">
-                <label for="customerName" class="form-label">Name of the Customer</label>
-                <input type="email" class="form-control" id="inputEmail4" name="name of customer">
-              </div>
-
-              <div class="col-md-6 mt-3">
-                <label for="formFile" class="form-label">Upload a Passport Sized Photo</label>
-                <input class="form-control" type="file" id="formFile">
-              </div>
-
-              <div class="col-md-6 mt-3">
-                <label class="form-label">Father's/ Husband's Name</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-6 mt-3">
-                <label class="form-label">Mother's Name</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-4 mt-3">
-                <label class="form-label">Date of Birth</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-4 mt-3">
-                <label class="form-label">SEX</label>
-                <div class="div row">
-                  <div class="form-check col-4 mx-2">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Male
-                    </label>
-                  </div>
-                  <div class="form-check col-6">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Female
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mt-3">
-                <label class="form-label">Nationality</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-12 mt-3">
-                <label for="inputAddress" class="form-label">Present Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-              </div>
-              <div class="col-md-6 mt-3">
-                <label class="form-label">Mobile</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-md-6 mt-3">
-                <label class="form-label">Tel Number</label>
-                <input type="password" class="form-control" id="inputPassword4">
-              </div>
-              <div class="col-12 mt-3">
-                <label for="inputAddress2" class="form-label">Permanent Address</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-              <div class="col-6 mt-3">
-                <label for="inputAddress2" class="form-label">Tel Number</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-              <div class="col-6 mt-3">
-                <label for="inputAddress2" class="form-label">Email</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-
-              <div class="col-6 mt-3">
-                <label for="inputAddress2" class="form-label">Occupation</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-              <div class="col-6 mt-3">
-                <label for="inputAddress2" class="form-label">E-Tin Number</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-              </div>
-
-            </form>
-          </div>
-        </div>
-
-      </section>
 
       <section class=" sectionForm container shadow py-3 p-3 mt-5">
 
@@ -445,34 +243,42 @@
         <div class="px-3">
           <h3 class="row">Bank Details</h3>
 
-          <form class="row g-3" action="#">
+          <div class="row g-3" action="#">
 
             <div class="col-md-6 mt-3">
               <label for="customerName" class="form-label">Bank Name</label>
-              <input type="name" class="form-control" id="inputEmail4" name="name of customer" required>
+              <input type="text" class="form-control" name="name" >
             </div>
 
             <div class="col-md-6 mt-3">
               <label for="formFile" class="form-label">Branch Name</label>
-              <input class="form-control" type="text" id="formFile" required>
+              <input class="form-control" type="text" name="branch" >
             </div>
 
             <div class="col-md-6 mt-3">
-              <label class="form-label">Acc No.
-              </label>
-              <input type="text" class="form-control" id="inputPassword4" required>
+              <label class="form-label">Acc No.</label>
+              <input type="text" class="form-control" name="bank_ac_number" >
             </div>
             <div class="col-md-6 mt-3">
               <label class="form-label">Routing No.</label>
-              <input type="password" class="form-control" id="inputPassword4" required>
+              <input type="text" class="form-control" name="routing_num" >
             </div>
 
-            <div class="col-10 mt-3"></div>
-            <div class="col-2 mt-3" align="right">
-              <a href="nomineeForm.html">
-                <button id="hide" class="btn btn-primary">Next</button></a>
+            <div class="col-8 mt-3"></div>
+            <div class="col-2 mt-3" align="right"> Operation Type:</div>
+            <div class="col-1 mt-3" align="right">              
+              <select name="operation_type">
+                <option value="client">Select</option>
+                <option value="individual">Individual</option>
+                <option value="joint">Joint</option>
+                <option value="corporate">Corporate</option>
+              </select>
+          
+             </div>
+            <div class="col-1 mt-3" align="right">
+              <button class="btn btn-primary">Next</button></a>
             </div>
-
+          </div>
           </form>
         </div>
 
