@@ -93,7 +93,7 @@
     <aside class="sidenav mt-5" align="center">
       <!-- Brand Logo -->
       <a href="index.html" class="brand-link">
-        <img src="../../dist/img/logo4.png" alt="AdminLTE Logo" style="opacity:1; height:5em">
+        <img src="../dist/img/logo4.png" alt="AdminLTE Logo" style="opacity:1; height:5em">
       </a>
 
       <!-- Sidebar -->
@@ -134,9 +134,15 @@
         <!-- Authorized Person's Info -->
         <section class="sectionForm container card shadow py-3 px-5 mt-5 mb-5e">
             <!-- Joint Account Holder -->
+            <form class="row" action="corporate_form_handler.php" method="POST">
+
             <form class="row" action="regForm.html" method="">
               <h3 class="col-12">Corporate Account Holder</h3>
-            
+
+                <div class="col-md-4 mt-3">
+                  <label class="form-label">Client_code</label>
+                  <input type="text" class="form-control" name="client_code">
+                </div>
     
                 <div class="col-md-6 mt-3">
                   <label for="name" class="form-label">Name of Authorized Person</label>
@@ -217,7 +223,7 @@
                   </div>
     
               </form>
-            </div>
+            </form>
 
       </section>
 

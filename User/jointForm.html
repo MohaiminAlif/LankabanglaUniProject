@@ -80,7 +80,7 @@
     <aside class="sidenav mt-5" align="center">
       <!-- Brand Logo -->
       <a href="index.html" class="brand-link">
-        <img src="../../dist/img/logo4.png" alt="AdminLTE Logo" style="opacity:1; height:5em">
+        <img src="../dist/img/logo4.png" alt="AdminLTE Logo" style="opacity:1; height:5em">
       </a>
 
       <!-- Sidebar -->
@@ -121,11 +121,15 @@
 
       <section class="sectionForm container card shadow py-3 px-5 mt-5 mb-5e">
         <!-- Joint Account Holder -->
-        <form action="corporateForm.html" method="" class="row">
+        <form class="row" action="joint_form_handler.php" method="POST">
+
         
           <h3 class="col-12">Joint Account Holder</h3>
         
-
+            <div class="col-md-4 mt-3">
+              <label class="form-label">Client_code</label>
+              <input type="text" class="form-control" name="client_code">
+            </div>
             <div class="col-md-6 mt-3">
               <label for="name" class="form-label">Name of Holder</label>
               <input type="text" class="form-control" name="name">
@@ -175,6 +179,7 @@
             </div>
             <div class="col-12 mt-3">
               <label for="inputAddress2" class="form-label">Permanent Address</label>
+              
               <input type="text" class="form-control" name="permanent_address" placeholder="Apartment, studio, or floor">
             </div>
              <div class="col-6 mt-3">
@@ -192,12 +197,13 @@
             </div>
             
             <div class="col-md-6 mt-3">
-                <label for="formFile" class="form-label">Upload a Photo of your Signature</label>
-                <input class="form-control" type="file" name="signature">
-              </div>
-
-      
-
+              <label for="formFile" class="form-label">Upload a Passport Sized Photo</label>
+              <input class="form-control" type="file" name="photo" accept="image/*">
+            </div>
+            <div class="col-md-6 mt-3">
+              <label for="formFile" class="form-label">Upload a Photo of your Signature</label>
+              <input class="form-control" type="file" name="signature" accept="image/*">
+            </div>
 
             <div class="col-11 mt-3"></div>
 
@@ -207,7 +213,7 @@
         
              
         </form>
-          
+
 
       </section>
 

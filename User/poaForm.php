@@ -1,0 +1,309 @@
+<?php
+  session_start();
+  
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Power of Attorney | Form</title>
+    <link rel="icon" type="image/png" href="../images/icons/logo2.jpg" />
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css" />
+    <!-- Ionicons -->
+    <link
+      rel="stylesheet"
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+    />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
+    <!-- iCheck -->
+    <link
+      rel="stylesheet"
+      href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css" />
+    <!-- overlayScrollbars -->
+    <link
+      rel="stylesheet"
+      href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css"
+    />
+    <!-- Daterange picker -->
+    <link
+      rel="stylesheet"
+      href="../plugins/daterangepicker/daterangepicker.css"
+    />
+    <!-- summernote -->
+    <link
+      rel="stylesheet"
+      href="../plugins/summernote/summernote-bs4.min.css"
+    />
+    <link rel="stylesheet" href="../dist/css/style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <style>
+      #jointAccount {
+        display: none;
+      }
+
+      .sectionForm {
+        background-color: rgba(20, 174, 221, 0.137);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Hide the form by default */
+      #myForm {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body class="hold-transition">
+    <div class="row mt-2">
+      <!-- Main Sidebar Container -->
+      <aside class="sidenav mt-5" align="center">
+        <!-- Brand Logo -->
+        <a href="dashboard.html" class="brand-link">
+          <img
+            src="../dist/img/logo4.png"
+            alt="AdminLTE Logo"
+            style="opacity: 1; height: 5em"
+          />
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <li class="nav-item mt-4">
+                <a href="dashboard.php" class="nav-link card shadow">
+                  <p>Dashboard</p>
+                </a>
+              </li>
+
+              <li class="nav-item mt-4" disable>
+                <a href="#" class="nav-link card shadow ">
+                  <p>Brokerage Registration Form</p>
+                  
+                </a>
+              </li>
+
+              <li class="nav-item mt-4">
+                <a href="#" class="nav-link card shadow">
+                  <p>Nominee Details</p> 
+                </a>
+              </li>
+
+              <li class="nav-item mt-4">
+                <a href="#" class="nav-link card shadow">
+                  <p>Power of Attorney Details</p>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
+
+      <div class="col-2"></div>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="col-9">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-12">
+                <h1 class="mt-5" align="center">Power of Attorney Form</h1>
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+
+        <!-- Main content -->
+
+        <section class="sectionForm container card shadow py-5 px-5 mt-5">
+          <div class="container mt-5 mb-5">
+            <h5>
+              Please complete all details in CAPITAL letters. Please fill all names correctly. All communications shall be sent to the
+              correspondence address of only the First Named Account Holder as specified in BO Account Opening Form.
+            </h5>
+          </div>
+
+          <div class="row">
+            <h3>Power of Attorney Details</h3>
+          </div>
+          
+            <form action="poaForm_handler.php" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="customerName" class="form-label">Name of applicant</label>
+                  <input type="text" class="form-control" name="name"/>
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Upload a Photo</label>
+                  <input class="form-control" type="file" name="photo"/>
+                </div>
+
+                <div class="col-md-3">
+                  <label class="form-label">Upload a photo of Signature</label>
+                  <input class="form-control" type="file" name="signature"/>
+                </div>
+
+                <div class="col-md-12 mt-3">
+                  <label class="form-label">Address</label>
+                  <input class="form-control" type="text" name="address"/>
+                </div>
+
+
+
+                <div class="col-md-3 mt-3">
+                  <label class="form-label">Passport Number</label>
+                  <input type="text" class="form-control" name="passport_num"/>
+                </div>
+                <div class="col-md-3 mt-3">
+                  <label class="form-label">Issue Place</label>
+                  <input type="text" class="form-control" name="issue_place"/>
+                </div>
+                <div class="col-md-3 mt-3">
+                  <label class="form-label">Issue Date</label>
+                  <input type="date" class="form-control" name="issue_date" />
+                </div>
+                <div class="col-md-3 mt-3">
+                  <label class="form-label">Expiry Date</label>
+                  <input type="date" class="form-control" name="expiry_date"/>
+                </div>
+
+                <div class="col-md-4 mt-3">
+                  <label  class="form-label"
+                    >Mobile Nuumber</label
+                  >
+                  <input type="text" class="form-control" name="mobile" />
+                </div>
+                <div class="col-md-4 mt-3">
+                  <label  class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email"/>
+                </div>
+
+                <div class="col-md-4 mt-3">
+                  <label  class="form-label">Telephone Number</label>
+                  <input type="text" class="form-control" name="telephone"/>
+                </div>
+
+                <h5 class="container text-secondary mt-5 text-break">
+                  The rules and regulations of the Depository and CDBL participant pertaining to an account which are in force now have been read by
+                  me/us and I/we have understood the same and I/we agree to abide by and to be bound by the rules as are in force from time to time
+                  for such account. I/We also declare that the particulars given by me/us are true to the best of my/our knowledge as on the date of
+                  making such application. I/We further agree that any false/misleading information given by me/us or suppression of any material fact
+                  will render my/our account liable for termination and further action.</h5>
+             
+                           
+                <div class="col-md-12 mt-5" align="right">
+                  <button class="btn btn-success text-bold">Submit</button>
+                </div>
+
+
+
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+      <div class="row mt-5" style="color: rgb(76, 88, 128)">
+        <strong class="col-lg-3 col-md-12 col-sm-6" align="center"
+          >Developed and Redesigned by IUB DataCoders 2023.</strong
+        >
+        <div class="col-lg-8"></div>
+        <strong class="col-lg-1 col-md-12 col-sm-2" align="center">
+          <p>Version 1.0</p>
+        </strong>
+      </div>
+      <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge("uibutton", $.ui.button);
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="../plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="../plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="../plugins/moment/moment.min.js"></script>
+    <script src="../plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="../plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../dist/js/adminlte.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="../dist/js/pages/dashboard.js"></script>
+
+    <!--===============================================================================================-->
+    <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../vendor/bootstrap/js/popper.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="../vendor/tilt/tilt.jquery.min.js"></script>
+    <script>
+      $(".js-tilt").tilt({
+        scale: 1.1,
+      });
+    </script>
+    <!--===============================================================================================-->
+    <script src="../dist/js/main.js"></script>
+  </body>
+</html>
