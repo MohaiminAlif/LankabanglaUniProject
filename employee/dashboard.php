@@ -30,26 +30,26 @@ if ($result->num_rows > 0) {
     
 } 
 
-$sqlPerDivision = "SELECT present_division, COUNT(*) AS count FROM client_t AS c INNER JOIN boac_t AS b ON b.client_code = c.client_code GROUP BY present_division";
-$result = $conn->query($sqlPerDivision);
+// Execute the SQL query
+$sql = "SELECT YEAR(date) AS year, COUNT(*) AS record_count FROM boac_t GROUP BY YEAR(date) ORDER BY year";
+$result = $conn->query($sql);
 
+// Initialize arrays to store data for the chart
+$years = [];
+$recordCounts = [];
 
-// Initialize an empty array to store chart data
-$chartData = array();
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $year = $row["year"];
+        $recordCount = $row["record_count"];
 
-// Fetch data from the result and format it as needed
-while ($row = $result->fetch_assoc()) {
-    $chartData[] = array(
-        "label" => $row["present_division"],
-        "data" => $row["count"]
-    );
+        $years[] = $year;
+        $recordCounts[] = $recordCount;
+    }
 }
 
-// Close the database connection
+// Close the Database Connection
 $conn->close();
-
-// Convert the PHP array to JSON
-$chartDataJSON = json_encode($chartData);
 ?>
 
 
@@ -62,37 +62,21 @@ $chartDataJSON = json_encode($chartData);
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin | Dashboard</title>
+  <title>Admin | Dashboard</title>  
   <link rel="icon" type="image/png" href="../images/icons/logo2.jpg"/>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="../https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="../https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
+  
+   <!-- iCheck -->
   <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
-
-  <!-- Preloader -->
-  <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -360,33 +344,34 @@ $chartDataJSON = json_encode($chartData);
           <!-- ./col -->
 
 
+
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <a href="yearwise.php">
+            <button id="generateChartButton" class="btn p-5">
             <div class="small-box bg-secondary">
               
               <div class="inner">
                 <h4>Line Chart</h4>
 
                 <p>Number of BO A/C opening <br>Year-wisely</p>
-              </div>
-              <div class="icon">
+                <div class="icon">
               <i class="fa-solid fa-chart-line"></i>
               </div>
+
+              </div>
             </div>
-          </a>
+            </button>
           </div>
           <!-- ./col -->
         </div>
 
-        <div class="card mx-3" >
+
+        <div class="mx-3" >
               <!-- Chart container for each chart -->
-              <div class="mx-5 mt-5" style="width: 800px; height: 800px;">
-                  <canvas id="chart1"></canvas>
-              </div>
-              <div style="width: 800px; height: 600px;">
-                  <canvas id="chart2"></canvas>
-              </div>
+              <div style="width: 80%; margin: auto;">
+        <canvas id="lineChart"></canvas>
+    </div>
               <!-- Add more chart containers for other charts -->
         </div>
 
@@ -408,43 +393,58 @@ $chartDataJSON = json_encode($chartData);
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+
+
+
+
+
+
 </div>
 <!-- ./wrapper -->
-<script src="path-to-chartjs/Chart.min.js"></script>
+
 <!-- jQuery -->
 <script src="../plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button)
-</script>
-<!-- Bootstrap 4 -->
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="../plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="../plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="../plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="../plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="../plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="../plugins/moment/moment.min.js"></script>
-<script src="../plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="../plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
+
 <script src="../dist/js/adminlte.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../dist/js/pages/dashboard.js"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
+
+<script>
+        // Function to generate the line chart
+        function generateLineChart() {
+            var ctx = document.getElementById('lineChart').getContext('2d');
+
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: <?php echo json_encode($years); ?>,
+                    datasets: [{
+                        label: 'Record Counts',
+                        data: <?php echo json_encode($recordCounts); ?>,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 2,
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        // Add an event listener to the button
+        document.getElementById('generateChartButton').addEventListener('click', function() {
+            generateLineChart();
+        });
+    </script>
 
 
 
