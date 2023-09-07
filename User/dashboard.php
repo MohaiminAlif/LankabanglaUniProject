@@ -3,8 +3,7 @@
   if(!isset($_SESSION['role']) || $_SESSION['role'] != 'client'){
     header("Location: login.php");
   }
-
-  
+ 
 ?>
 
 

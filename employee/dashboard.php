@@ -308,7 +308,7 @@ $conn->close();
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <a href="perdivpergender.php">
+            <button id="generateChartButton" class="btn p-5">
             <div class="small-box bg-secondary">
               
               <div class="inner">
@@ -348,7 +348,7 @@ $conn->close();
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <button id="generateChartButton" class="btn p-5">
+            <button id="yearWise" class="btn p-5">
             <div class="small-box bg-secondary">
               
               <div class="inner">
@@ -441,7 +441,7 @@ $conn->close();
         }
 
         // Add an event listener to the button
-        document.getElementById('generateChartButton').addEventListener('click', function() {
+        document.getElementById('yearWise').addEventListener('click', function() {
             generateLineChart();
         });
     </script>
