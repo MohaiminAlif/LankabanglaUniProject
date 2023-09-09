@@ -1,8 +1,10 @@
 <?php
   session_start();
-  if(!isset($_SESSION['role']) || $_SESSION['role'] != 'client'){
-    header("Location: login.php");
+  if($_SESSION['role'] != 'client'){
+    header("Location: ../index.html");
   }
+
+  echo $_SESSION['name'];
  
 ?>
 
