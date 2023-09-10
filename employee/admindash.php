@@ -20,7 +20,6 @@ if(!$conn){
 }
 
 
-
 $sqlcount = "SELECT COUNT(*) AS record_count FROM client_t";
 $result = $conn->query($sqlcount);
 
@@ -39,7 +38,10 @@ if ($result->num_rows > 0) {
     
 } 
 
-// Execute the SQL query
+
+
+
+// Execute the SQL query for year wise line graph
 $sql = "SELECT YEAR(date) AS year, COUNT(*) AS record_count FROM boac_t GROUP BY YEAR(date) ORDER BY year";
 $result = $conn->query($sql);
 
@@ -57,11 +59,30 @@ if ($result->num_rows > 0) {
     }
 }
 
-// Close the Database Connection
+
+// Execute the SQL query for bar chart client per division
+$sqlPerDivision = "SELECT present_division, COUNT(*) AS count FROM client_t AS c INNER JOIN boac_t AS b ON b.client_code = c.client_code GROUP BY present_division";
+$result = $conn->query($sqlPerDivision);
+
+
+
+// Initialize an empty array to store chart data
+$chartData = array();
+
+// Fetch data from the result and format it as needed
+while ($row = $result->fetch_assoc()) {
+    $chartData[] = array(
+        "label" => $row["present_division"],
+        "data" => $row["count"]
+    );
+}
+
+// Close the database connection
 $conn->close();
+
+// Convert the PHP array to JSON
+$chartDataJSON = json_encode($chartData);
 ?>
-
-
 
 
 
@@ -265,94 +286,22 @@ $conn->close();
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <a href="perDiv.php">
-            <div class="small-box bg-secondary">
-              
-              <div class="inner">
-                <h4>BAR CHART</h4>
-                <p>Number of BO A/C holders <br>Per Division</p>
-              </div>
-              <div class="icon">
-                <i class="fa-solid fa-chart-column"></i></div>
-            </div>
-          </a>
-          </div>
-          <!-- ./col -->
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <a href="User/regForm.html">
+            <button id="clientPerDivision" class="btn p-5">
             <div class="small-box bg-secondary">
               
               <div class="inner">
                 <h4>Bar Chart</h4>
 
-                <p>Number of BO A/C holders <br> Per Branch in a Thana</p>
+                <p>Number of Clien <br>Per Division</p>
+                <div class="icon">
+              <i class="fa-solid fa-chart-line"></i>
               </div>
-              <div class="icon">
-                <i class="fa-solid fa-chart-column"></i></div>
-            </div>
-          </a>
-          </div>
-          <!-- ./col -->
 
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <a href="User/regForm.html">
-            <div class="small-box bg-secondary">
-              
-              <div class="inner">
-                <h4>Bar Chart</h4>
-
-                <p>Number of BO A/C holders achieved by <br>Each Customer Relationship Manager in a Branch</p>
-              </div>
-              <div class="icon">
-                <i class="fa-solid fa-chart-column"></i>
               </div>
             </div>
-          </a>
+            </button>
           </div>
           <!-- ./col -->
-
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <a href="perdivpergender.php">
-            <div class="small-box bg-secondary">
-              
-              <div class="inner">
-                <h4>Bar Chart</h4>
-
-                <p>Number of Male & Female BO A/C holders <br>Per division</p>
-              </div>
-              <div class="icon">
-                <i class="fa-solid fa-chart-column"></i>
-              </div>
-            </div>
-          </a>
-          </div>
-          <!-- ./col -->
-
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <a href="User/regForm.html">
-            <div class="small-box bg-secondary">
-              
-              <div class="inner">
-                <h4>Pie Chart</h4>
-
-                <p>Number of Male & Female BO A/C holders<br>In a Branch</p>
-              </div>
-              <div class="icon">
-              <i class="fa-solid fa-chart-pie"></i>
-              </div>
-            </div>
-          </a>
-          </div>
-          <!-- ./col -->
-
-
 
 
           <div class="col-lg-3 col-6">
@@ -373,16 +322,36 @@ $conn->close();
             </button>
           </div>
           <!-- ./col -->
+
+
+
         </div>
 
 
-        <div class="mx-3" >
+        <div class="card mx-3" >
               <!-- Chart container for each chart -->
-              <div style="width: 80%; margin: auto;">
-        <canvas id="lineChart"></canvas>
-    </div>
+              
               <!-- Add more chart containers for other charts -->
         </div>
+
+        <div class="mx-3" >
+          <!-- Chart container for each chart -->
+          <div style="width: 80%; margin: auto;">
+            <canvas id="lineChart"></canvas>
+            <canvas id="chartData"></canvas>
+          </div>
+          <!-- Add more chart containers for other charts -->
+
+<!-- 
+          <div class="mx-5 mt-5" style="width: 800px; height: 800px;">
+                  
+              </div>
+              <div style="width: 800px; height: 600px;">
+                  <canvas id="clientPerDivision"></canvas>
+              </div>
+
+
+        </div> -->
 
         
       </div><!-- /.container-fluid -->
@@ -454,6 +423,44 @@ $conn->close();
             generateLineChart();
         });
     </script>
+
+
+<script>
+    // Get the chart data from PHP
+    var chartData = <?php echo $chartDataJSON; ?>;
+
+    // Create a bar chart
+    var ctx1 = document.getElementById("clientPerDivision").getContext("2d");
+    new Chart(ctx1, {
+        type: "bar",
+        data: {
+            labels: chartData.map(function(item) {
+                return item.label;
+            }),
+            datasets: [{
+                label: "Number of BO A/C holders per division",
+                data: chartData.map(function(item) {
+                    return item.data;
+                }),
+                backgroundColor: "rgba(75, 192, 192, 0.2)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+
+        document.getElementById('clientPerDivision').addEventListener('click', function() {
+            generateLineChart();
+        });
+    });
+</script>
+
 
 
 

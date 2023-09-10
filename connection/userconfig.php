@@ -96,7 +96,7 @@ $query = "SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'";
 
             $_SESSION = $res;
             $_SESSION['role'] = 'admin';        
-            header("Location: ../employee/dashboard.php");
+            header("Location: ../employee/admindash.php");
   
         }        
      
