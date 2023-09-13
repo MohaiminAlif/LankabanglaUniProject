@@ -28,12 +28,12 @@
  
      // }
  
-//      if($user_type=='client_t'){ $query ="SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'";}
-//      if($user_type=='relationshipmanager_t'){$query = "SELECT * FROM relationshipmanager_t WHERE manager_id = '$id' AND pass = '$pass'";}
-//      if($user_type=='headofsettlement_t'){$query = "SELECT * FROM headofsettlement_t WHERE head_id = '$id' AND pass = '$pass'";}
-//      else{$query ="SELECT * FROM admin_t WHERE admin_ id = '$id' AND pass = '$pass'";}
+     if($user_type=='client_t'){ $query ="SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'";}
+     if($user_type=='relationshipmanager_t'){$query = "SELECT * FROM relationshipmanager_t WHERE manager_id = '$id' AND pass = '$pass'";}
+     if($user_type=='headofsettlement_t'){$query = "SELECT * FROM headofsettlement_t WHERE head_id = '$id' AND pass = '$pass'";}
+     else{$query ="SELECT * FROM admin_t WHERE admin_ id = '$id' AND pass = '$pass'";}
      
-$query = "SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'";
+// $query = "SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'";
 
  
 //  $result = $conn->query("SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'");

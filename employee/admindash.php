@@ -5,9 +5,6 @@ session_start();
 if($_SESSION['role'] != 'admin'){
   header("Location: ../index.html");
 }
-
-
-
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -334,7 +331,7 @@ $chartDataJSON = json_encode($chartData);
               <div class="inner">
                 <h4>Bar Chart</h4>
 
-                <p>Number of male and female <br>division</p>
+                <p>Number of male and female <br>per division</p>
                 <div class="icon">
               <i class="fa-solid fa-chart-line"></i>
               </div>
@@ -345,6 +342,26 @@ $chartDataJSON = json_encode($chartData);
           </div>
           <!-- ./col -->
 
+          
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <button id="generateChartButton" class="btn p-5">
+            <div class="small-box bg-secondary">
+              
+              <div class="inner">
+                <h4>Bar Chart</h4>
+
+                <p>Number of male and female <br>per branch</p>
+                <div class="icon">
+              <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              </div>
+            </div>
+            </button>
+          </div>
+          <!-- ./col -->
 
 
         </div>
