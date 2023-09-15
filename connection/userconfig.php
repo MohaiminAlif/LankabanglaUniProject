@@ -39,18 +39,18 @@
 //  $result = $conn->query("SELECT * FROM client_t WHERE client_code = '$id' AND pass = '$pass'");
 
 
-// if ($result) {
-//     while ($row = $result->fetch_assoc()) {
-//         // Process the retrieved data here
-//     }
-//     $result->free_result(); // Free the result set when done
-// } else {
-//     // Handle query execution failure
-//     echo "Query failed: " . $conn->error;
-// }
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        // Process the retrieved data here
+    }
+    $result->free_result(); // Free the result set when done
+} else {
+    // Handle query execution failure
+    echo "Query failed: " . $conn->error;
+}
 
  
-     $result = $conn->query($query)->fetch_assoc();
+    //  $result = $conn->query($query)->fetch_assoc();
  
  
  
@@ -64,7 +64,7 @@
        
             $_SESSION['role'] = "client";
             // $_SESSION['name'] = $result.$row['name'];
-            $_SESSION['name'] = $result['name'];
+            $_SESSION['name'] = $row['name'];
        
             
             header("Location: ../user/dashboard.php");
@@ -73,9 +73,10 @@
   
           if($user_type =='headofsettlement_t'){
             $_SESSION = $res;
-            // $_SESSION['client_code'] = $res['client_code'];
-            // $_SESSION['name'] = $res['name'];
-            // $_SESSION['role'] = "client";
+            $_SESSION['role'] = "headofsettlement";
+            //$_SESSION['client_code'] = $res['client_code'];
+            $_SESSION['name'] = $row['name'];
+        
             
             header("Location: ../employee/hosDash.html");
   
